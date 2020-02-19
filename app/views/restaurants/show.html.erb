@@ -9,7 +9,12 @@
     <h4>Reviews</h4>
     <ul>
       <% @restaurant.reviews.each do |review| %>
-      <li> <%= review.content %> </li>
+      <li> <%= review.content %></li>
+      <li>
+      <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      </li>
       <% end %>
     </ul>
   </div>
