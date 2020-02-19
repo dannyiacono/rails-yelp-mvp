@@ -3,8 +3,10 @@
   <h1 id="restaurants_header">Restaurants</h1>
   <div class="restaurant_list">
     <% @restaurants.each do |restaurant| %>
-    <p><%= restaurant.name %></p>
+    <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
     <%  end %>
+    <hr>
+    <%= link_to "Create a new restaurant", new_restaurant_path, class: "btn btn-primary" %>
   </div>
 
 </div>

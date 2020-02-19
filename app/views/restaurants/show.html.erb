@@ -1,4 +1,23 @@
 <div class="container">
   <h1><%= @restaurant.name %></h1>
+  <div class="restaurant_info">
+    <p>Category: <%= @restaurant.category.capitalize %></p>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Phone Number: <%= @restaurant.phone_number %></p>
+  </div>
+  <div class="restaurant_reviews">
+    <h4>Reviews</h4>
+    <ul>
+      <% @restaurant.reviews.each do |review| %>
+      <li> <%= review.content %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <%= link_to "Review this restaurant", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  </div>
+  <hr>
+  <%= link_to "Back to Restaurant list", restaurants_path %>
 </div>
+
 
