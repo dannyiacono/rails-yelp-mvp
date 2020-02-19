@@ -1,5 +1,8 @@
 <div class="container">
   <h1><%= @restaurant.name %></h1>
+  <div id="edit-btn">
+    <%= link_to "Review this restaurant", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  </div>
   <div class="restaurant_info">
     <p>Category: <%= @restaurant.category.capitalize %></p>
     <p>Address: <%= @restaurant.address %></p>
@@ -17,9 +20,6 @@
       </li>
       <% end %>
     </ul>
-  </div>
-  <div>
-    <%= link_to "Review this restaurant", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
   </div>
   <hr>
   <%= link_to "Back to Restaurant list", restaurants_path %>
