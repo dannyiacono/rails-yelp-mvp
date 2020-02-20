@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 id="restaurants_header">Restaurants</h1>
+  <h1 id="restaurants_header" style="border-bottom: 1px solid #E3E3E0;">Restaurants</h1>
   <div class="restaurant_list">
     <% @restaurants.each do |restaurant| %>
     <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
